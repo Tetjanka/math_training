@@ -6,5 +6,12 @@
     </head>
     <body>
         <h1>Welcome to math world!</h1>
+
+        {% if user.is_authenticated %}
+            <p>Hi {{ user.username }}!</p>
+        {% else %}
+            <p>You are not logged in.</p>
+            <a href="{% url 'login' %}">Log In</a>
+        {% endif %}
     </body>
 </html>
