@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        {% csrf_token %}
+        <div class="main_shifted" id = "main">
+            <div class="content">
+                <div id="content">
+                    <div id="content-main">
+                        <form method="post" id="signup-form">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button class ="signupButton" type="submit">Sign up</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
