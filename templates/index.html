@@ -10,11 +10,13 @@
         <h1>Welcome to math world!</h1>
 
         {% if user.is_authenticated %}
+
             <p class = "hello">Hi, {{ user.username }}!</p>
             <p class = "hello"><a href="{% url 'logout' %}">Log out</a></p>
             <div class="start">
                 <a class = "start_button"> Start training</a>
             </div>
+
 
         {% else %}
             <p>You are not logged in.</p>
