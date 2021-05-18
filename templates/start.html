@@ -1,22 +1,18 @@
 
 <html>
     <head>
-        <title>auth</title>
+        <title>Start</title>
     </head>
     <body>
         <header>
-            <h1>Auth</a></h1>
+            <h1>Start</a></h1>
         </header>
         {% if user.is_authenticated %}
             <p>Hi {{ user.username }}!</p>
-            <p><a href="{% url 'logout' %}">Log out</a></p>
         {% else %}
             <p>You are not logged in.</p>
             <a href="{% url 'login' %}">Log In</a>
         {% endif %}
-        <div>
-            {% block content %}
-            {% endblock content %}
-        </div>
+
     </body>
 </html>
