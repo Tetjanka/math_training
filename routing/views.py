@@ -5,7 +5,7 @@ def index(request):
      return render(request, "index.html")
 
 def start(request):
-    return HttpResponse("<h2>Почати тренування</h2>")
+    return HttpResponse("start.html")
 
 def auth(request):
     return render(request, "auth.html")
