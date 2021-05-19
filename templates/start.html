@@ -1,16 +1,19 @@
 
 <html>
+{% load static %}
     <head>
         <title>Start</title>
     </head>
     <body>
         <header>
             <h1>Start</a></h1>
+            <link href="{% static 'css/style.css' %}" rel="stylesheet">
         </header>
         {% if user.is_authenticated %}
-            <p>Hi {{ user.username }}!</p>
+            <p class = "hello">Hi, {{ user.username }}!</p>
+            <p class = "hello"><a href="{% url 'logout' %}">Log out</a></p>
         {% else %}
-            <p>You are not logged in.</p>
+            <p class = "hello">You are not logged in.</p>
             <a href="{% url 'login' %}">Log In</a>
         {% endif %}
 
