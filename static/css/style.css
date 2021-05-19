@@ -1,5 +1,6 @@
 body {
     padding: 40px;
+    background-color: #FFFFE6;
 
 }
 
@@ -8,6 +9,12 @@ h1{
     display: flex;
     justify-content: center;
 
+}
+
+a:-webkit-any-link {
+    color: #AD6D7F;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .hello{
