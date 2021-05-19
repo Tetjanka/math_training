@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <title>Hello, young padawan! </title>
-        <link href="{% static 'css/index.css' %}" rel="stylesheet">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
     </head>
     <body>
         <h1>Welcome to math world!</h1>
@@ -19,7 +19,7 @@
             </div>
 
         {% else %}
-            <p>You are not logged in.</p>
+            <p class = "hello">You are not logged in.</p>
             <a href="{% url 'login' %}">Log In</a>
         {% endif %}
     </body>
