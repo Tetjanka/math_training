@@ -1,0 +1,40 @@
+
+<html>
+{% load static %}
+    <head>
+        <title>Training </title>
+    </head>
+    <body>
+        <header>
+            <h1>Train your adding skills</a></h1>
+            <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        </header>
+        {% if user.is_authenticated %}
+            <p class = "hello">Hi, {{ user.username }}!</p>
+            <p class = "hello"><a href="{% url 'logout' %}">Log out</a></p>
+            {% block content %}
+            <div class="cont_train">
+                <form class="cont_train_form" action="index.html" method="post">
+
+                    <input id = "num1" class = "cont_train_input" type="text"  value={{numberOne}}> </br>
+                    <p type="text" name="" value=""> + </p>
+
+                    <input id = "num2" class = "cont_train_input" type="text"  value={{numberTwo}}> </br>
+                    <p type="text" name="" value=""> = </p>
+                    <input class = "cont_train_input" type="text" placeholder="write your answer" value=""> </br>
+                    <button id = "add_send_button" class="cont_train_send_button">Send answer</button>
+                </form>
+            </div>
+            {% endblock %}
+
+
+        {% else %}
+            <p class = "hello">You are not logged in.</p>
+            <a href="{% url 'login' %}">Log In</a>
+        {% endif %}
+
+
+        <script src="{% static 'js/add.js' %}" type="text/javascript"></script>
+        <script src="{% static 'js/script.js' %}" type="text/javascript"></script>
+    </body>
+</html>

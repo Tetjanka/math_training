@@ -15,7 +15,7 @@
             <p class = "hello">Hi, {{ user.username }}!</p>
             <p class = "hello"><a href="{% url 'logout' %}">Log out</a></p>
             <div class="start">
-                <a class = "start_button"> Start training</a>
+                <a href="{% url 'start' %}" class = "start_button"> Start training</a>
             </div>
 
         {% else %}
