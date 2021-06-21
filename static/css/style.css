@@ -29,7 +29,7 @@ a:-webkit-any-link {
     justify-content: center;
 }
 
-.start_button{
+.start_button, .select_chapter_action{
     color: #AD6D7F;
     font-weight: bold;
     display: flex;
@@ -41,4 +41,71 @@ a:-webkit-any-link {
     border-radius: 5px;
     background-color: #C0C0C0;
 
+}
+
+.for_user{
+    display: flex;
+    justify-content: center;
+}
+
+.for_user_text{
+    color: #AD6D7F;
+    font-size: 20px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.select_chapter_action{
+    background-color: #C0C0C0;
+    font-size: 20px;
+    padding: 10px;
+    width: 150px;
+    border: 2px solid #4F555B;
+    border-radius: 5px;
+}
+
+.cont_train{
+    display: flex;
+    justify-content: center;
+}
+.cont_train_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.cont_train_input{
+    height: 40px;
+
+    font: bold;
+    border-radius: 5px;
+}
+
+input{
+    text-align: center;
+}
+
+input::placeholder{
+    mix-blend-mode: multiply;
+    font-style: italic;
+
+}
+
+.cont_train_send_button{
+
+    padding: 10px;
+    margin-top: 40px;
+    border-radius: 5px;
+    background-color: #C0C0C0;
 }
