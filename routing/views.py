@@ -2,6 +2,7 @@ from django.http import HttpResponse, HttpRequest, JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from start.views import Addition, Subtraction, Division, Multiplication
+
 import json
 
 def index(request):
@@ -43,15 +44,30 @@ def settings(request):
 
 def train_add(request):
     print ("we get add request")
-    res =  Addition()
-    result = res.action()
-    print (result[0])
-    numberOne = result[0];
-    numberTwo = result[1];
-    summa = result[2];
+    results = [[ None for y in range( 3 )] for x in range( 10 )]
+    print (results)
+    #numberOne = [ None for y in range( 10 )]
+    #numberTwo = [ None for y in range( 10 )]
+    #summa = [ None for y in range( 10 )]
+
+    for i in range (10):
+        res =  Addition()
+        result = res.action()
+        print (result[0])
+        results[i][0] = result[0]
+        results[i][1] = result[1]
+        results[i][2] = result[2]
+        #print (results[i][0])
+        #numberOne[i] = result[0]
+        #numberTwo[i] = result[1]
+        #summa[i] = result[2]
+
+    print (results)
+
     #json_res = JsonResponse({"res":result})
     #print (json_res)
+    #return render (request, "train_add.html")
 
     #return render (request, "train_add.html", {"json_res": json_res})
 
-    return render (request, "train_add.html", context = {"numberOne":numberOne, "numberTwo": numberTwo, "summa": summa})
+    return render (request, "train_add.html", context = {"results":results})
