@@ -71,18 +71,34 @@ li{
     border: 2px solid #4F555B;
     border-radius: 5px;
 }
-
 .cont_train{
+    display: column;
+    justify-content: center;
+}
+
+.cont_train_1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.cont_train_2 {
     display: flex;
     justify-content: center;
 }
-.cont_train_form{
+.cont_train_form, .cont_train_2_1{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
 
+}
+
+
+.cont_train_2_1.hidden, .cont_train_1.hidden {
+    display: none;
 }
 
 .cont_train_input{
@@ -100,6 +116,12 @@ input::placeholder{
     mix-blend-mode: multiply;
     font-style: italic;
 
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .cont_train_send_button{
