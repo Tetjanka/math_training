@@ -13,17 +13,28 @@
             <p class = "hello">Hi, {{ user.username }}!</p>
             <p class = "hello"><a href="{% url 'logout' %}">Log out</a></p>
             {% block content %}
+
             <div class="cont_train">
-                <form class="cont_train_form" action="index.html" method="post">
+                {%for i in '0123456789'|make_list %}
+                    <div class="cont_train_1" id = "{{forloop.counter}}"> <p> Task  {{forloop.counter}}  from 10</p> </div>
+                {%endfor%}
+                <div class="cont_train_2">
+                    <form class="cont_train_form" action="index.html" method="post">
 
-                    <input id = "num1" class = "cont_train_input" type="text"  value={{numberOne}}> </br>
-                    <p type="text" name="" value=""> + </p>
+                        {% for  value in results %}
+                            <div class = "cont_train_2_1" id = "{{forloop.counter}}">
+                                <input id = "num1" class = "cont_train_input" type="text" value={{value.0}} ></br>
+                                <p type="text" name="" value=""> + </p>
 
-                    <input id = "num2" class = "cont_train_input" type="text"  value={{numberTwo}}> </br>
-                    <p type="text" name="" value=""> = </p>
-                    <input class = "cont_train_input" type="text" placeholder="write your answer" value=""> </br>
-                    <button id = "add_send_button" class="cont_train_send_button">Send answer</button>
-                </form>
+                                <input id = "num2" class = "cont_train_input" type="text"  value={{value.1}}> </br>
+                                <p type="text" name="" value=""> = </p>
+                                <input id = "answer {{forloop.counter}}" class = "cont_train_input" type="number" placeholder="write your answer" ></br>
+                                <button type="button" id = "add_send_button {{forloop.counter}}" class="cont_train_send_button">Next >></button>
+                            </div>
+                        {% endfor %}
+                    </form>
+                </div>
+
             </div>
             {% endblock %}
 
