@@ -1,8 +1,8 @@
 from django.http import HttpResponse, HttpRequest, JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from start.views import Addition, Subtraction, Division, Multiplication
-
+from start.views import Addition, Subtraction, Division, Multiplication, WorkDB
+from start.models import SaveTask
 import json
 
 def index(request):
@@ -53,7 +53,6 @@ def train_add(request):
     for i in range (10):
         res =  Addition()
         result = res.action()
-        print (result[0])
         results[i][0] = result[0]
         results[i][1] = result[1]
         results[i][2] = result[2]
@@ -62,6 +61,7 @@ def train_add(request):
         #numberTwo[i] = result[1]
         #summa[i] = result[2]
 
+    WorkDB.insertTask(results, "Addition", request)
     print (results)
 
     #json_res = JsonResponse({"res":result})
